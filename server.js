@@ -1,58 +1,49 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const path = require('path');
+const summarizeText = require('./summarizer');
 const mongoose = require('mongoose');
-const { summarizeText } = require('./summarizer'); // Ensure this path is correct
-
+const Summary = require('./models/summary');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const cors = require('cors');
+app.use(cors());
 
 // Middleware
-app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json()); // Using Express's built-in body parser
+app.use(express.static(path.join(__dirname, 'public')));
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB connected"))
+.catch(err => console.error("MongoDB connection error:", err));
 
-// Define a schema for storing summaries
-const summarySchema = new mongoose.Schema({
-  originalText: String,
-  summarizedText: String
+// API route
+app.post('/api/summarize', async (req, res) => {
+    const { text_to_summarize } = req.body;
+    try {
+        const summarizedText = await summarizeText(text_to_summarize);
+        const summary = new Summary({
+            originalText: text_to_summarize,
+            summarizedText: summarizedText
+        });
+
+        await summary.save();
+        res.json({ summarizedText });
+    } catch (error) {
+        console.error("Error in summarization process:", error);
+        res.status(500).json({ error: 'Error summarizing text' });
+    }
 });
 
-const Summary = mongoose.model('Summary', summarySchema);
-
-// API endpoint for text summarization
-app.post('/api/summarize', async (req, res) => {
-  const textToSummarize = req.body.text;
-
-  try {
-    console.log('Summarizing text:', textToSummarize);
-    const summarizedText = await summarizeText(textToSummarize);
-    console.log('Summarized text:', summarizedText);
-
-    // Save to MongoDB
-    const summary = new Summary({
-      originalText: textToSummarize,
-      summarizedText: summarizedText
-    });
-    
-    console.log('Saving summary:', summary);
-    await summary.save();
-    console.log('Summary saved!');
-
-    res.json({ summarizedText });
-  } catch (error) {
-    console.error('Error during summarization:', error);
-    res.status(500).json({ error: 'Failed to summarize the text.' });
-  }
+// Serve HTML
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
