@@ -5,7 +5,7 @@ async function summarizeText(text) {
     let data = JSON.stringify({
         "inputs": text,
         "parameters": {
-            "max_length": 100,
+            "max_length": 100000,
             "min_length": 30
         }
     });

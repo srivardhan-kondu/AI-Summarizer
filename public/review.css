@@ -1,0 +1,73 @@
+/* General Styles */
+body {
+    background-color: #1A1A2E; /* Dark background */
+    color: #FFFFFF; /* Extra white text */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Feedback Section */
+.feedback-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2E2E4D; /* Slightly lighter dark background for contrast */
+    border-radius: 10px;
+}
+
+.feedback-section h1 {
+    text-align: center;
+    color: #FFFFFF; /* White text for headings */
+}
+
+.feedback-section p {
+    text-align: center;
+    color: #CCCCFF; /* Light purple for paragraph text */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #F0F0F0; /* Lighter white text for labels */
+}
+
+input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #4B4B70; /* Darker border for form elements */
+    border-radius: 5px;
+    background-color: #3E3E5A; /* Slightly lighter background for input fields */
+    color: #FFFFFF; /* White text inside inputs */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff; /* Bright blue border on focus */
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button.submit-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff; /* Bright blue for buttons */
+    color: #FFFFFF; /* White text on buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.submit-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

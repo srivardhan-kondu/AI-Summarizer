@@ -1,41 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Text Summarizer App</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Summarizer</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="target1">AI Text Summarizer App</h1>
-    <p class="target1">Hey! Lazy Learner...</p>
-    <p class="target2">Simply paste your text into the text area below and click the "Summarize" button.</p>
-    
-    <div class="container">
-        <div class="text-box">
-            <textarea id="text_to_summarize" name="text_to_summarize" 
-                      placeholder="Paste in some text to summarize. (Min length is 200 chars. Max length is 100,000 chars.)" 
-                      maxlength="100000"></textarea>
-            <button id="submit-button" class="submit-button">
-                <span class="submit-button-text">Summarize</span>
-            </button>
-        </div>
-        <div class="text-box">
-            <textarea id="summary" name="summarized_text" 
-                      placeholder="Summarized text will appear here" readonly></textarea>
-        </div>
-    </div>
+    
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#">Home Page</a></li>
+                <li><a href="summarizer.html">Summarizer</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="review.html">Review</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="ftr"></div>
-        <div class="details">
-            <h1>ANURAG UNIVERSITY</h1>
-            <h2>Department of Artificial Intelligence</h2>
-            <h3>Faculty: Mr. Hari Prasad</h3>
-        </div>
-    </footer>
+    <div class="welcome-section">
+        <h1>WELCOME TO AI TEXT SUMMARIZER</h1>
+    </div>
 
-    <script src="script.js"></script>
 </body>
 </html>

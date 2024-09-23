@@ -1,0 +1,68 @@
+/* will be updated soonn.... */
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1A1A2E; /* Dark background */
+    color: #E0E0E0; /* Light gray text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for content */
+.container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #2C2C54; /* Slightly lighter dark background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Heading Styles */
+h1, h2 {
+    color: #FFFFFF; /* Extra white text */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for title */
+}
+
+h2 {
+    font-size: 28px;
+}
+
+/* Paragraph Styles */
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: justify; /* Makes it more readable */
+    color: #E0E0E0;
+}
+
+/* List Styling */
+.details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.details-list li {
+    padding: 10px;
+    
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #FFFFFF; /* White text */
+}
+
+.details-list li strong {
+    color: #00BFFF; /* Highlight important fields in blue */
+}
+

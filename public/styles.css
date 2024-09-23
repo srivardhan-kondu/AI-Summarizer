@@ -1,137 +1,73 @@
-/* General Container Styles */
-.target1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    font-size: xx-large;
-}
-.target2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    font-size: xx-large;
-}
-.container {
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    gap: 20px; /* Space between text boxes */
-    margin-right: 250px;
-   
-}
-
-/* Text Box Styling */
-.text-box {
-    margin: 10px;
-    flex: 1;
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    background-color: #1A1A2E; /* Dark background */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #E0E0E0; /* Light gray for text */
+    overflow-x: hidden;
 }
 
-textarea {
-    width: 200%;
-    height: 250px;
-    padding: 15px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: vertical; /* Allows the user to resize the text area vertically */
-    transition: border-color 0.3s;
-    
+/* Navigation Bar Styles */
+nav {
+    width: 100%;
+    background-color: #1A1A2E;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); */
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
 }
 
-textarea:focus {
-    border-color: #007bff; /* Change border color on focus */
-    outline: none; /* Remove default focus outline */
-}
-textarea::placeholder {
-    color: black; /* Change color of the placeholder text */
-    font-style: bold; /* Italicize the placeholder text */
-    font-size: 20px; /* Adjust the font size of the placeholder text */
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
-textarea:focus::placeholder {
-    color: #ccc; /* Change color on focus */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 15px 0;
 }
-/* Submit Button Styling */
-.submit-button {
-    font-size: 13px;
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
     font-weight: bold;
-    color: rgb(0, 0, 0);
-    background-color: #007bff;
-    border: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 40px; /* Space between textarea and button */
-    margin-left: 40%;
-    height: 40px;
-    width: 90px;
-    border-radius: 12px;
-    
-   
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: 0.3s;
 }
-.submit-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-.submit-button:active {
-    transform: translateY(2px); /* Button press effect */
-}
-.submit-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack elements on smaller screens */
-        gap: 10px; /* Reduce gap between elements */
-    }
 
-    .submit-button {
-        width: 100%; /* Full width button on smaller screens */
-    }
-}
-/* Footer Styling */
-
-/* Footer Styling with Gradient Background */
-footer {
-    background: linear-gradient(90deg, #C8102E, #002147); /* Gradient from red to blue */
-    color: white; /* White text for contrast */
-    padding: 10px;
+/* Welcome Section Styles */
+.welcome-section {
     text-align: center;
-    font-size: 14px;
-    
-    
+    margin-top: 150px;
+    padding: 20px;
 }
 
-footer p {
-    margin: 5px 0;
+.welcome-section h1 {
+    font-size: 50px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
 }
 
-footer ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
+.welcome-section p {
+    font-size: 20px;
+    color: #E0E0E0; /* Light gray for paragraph text */
+    margin-top: 10px;
 }
-
-footer ul li {
-    margin: 5px 0;
-}
-
-/* Ensure text is readable on the gradient */
-footer p, footer ul li {
-    color: white;
-}
-
-/* Responsive Design for Footer */
-@media (max-width: 768px) {
-    footer {
-        font-size: 12px;
-        padding: 15px;
-    }
-}
-
