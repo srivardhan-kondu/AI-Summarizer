@@ -8,6 +8,10 @@ const SummarySchema = new mongoose.Schema({
     summarizedText: {
         type: String,
         required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 });
 

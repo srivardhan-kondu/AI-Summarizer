@@ -71,3 +71,38 @@ nav ul li a {
     color: #E0E0E0; /* Light gray for paragraph text */
     margin-top: 10px;
 }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .target1, .target2 {
+        font-size: large; /* Adjust font size for smaller screens */
+    }
+    .container {
+        padding: 10px; /* Reduce padding */
+    }
+    textarea {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+    .submit-button {
+        width: 80%; /* Make button width responsive */
+        height: 35px; /* Adjust height for smaller screens */
+    }
+    nav {
+        flex-direction: column; /* Stack items vertically */
+    }
+    nav ul {
+        flex-direction: column; /* Stack nav items */
+    }
+    nav ul li {
+        margin: 5px 0; /* Reduce margin between nav items */
+    }
+}
+
+@media (max-width: 480px) {
+    .submit-button {
+        width: 90%; /* Make button width almost full */
+        height: 30px; /* Further adjust height */
+    }
+    nav ul li a {
+        font-size: 16px; /* Reduce font size for smaller screens */
+    }
+}

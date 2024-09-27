@@ -12,16 +12,7 @@ body {
 }
 
 /* Target Styles */
-.target1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    font-size: xx-large;
-    color: #FFFFFF; /* Extra white text */
-}
-
-.target2 {
+.target1, .target2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +29,6 @@ body {
     align-items: center;
     padding: 20px;
     gap: 20px;
-    margin-right: 250px;
 }
 
 /* Text Box Styling */
@@ -50,8 +40,10 @@ body {
 }
 
 textarea {
-    width: 200%;
-    height: 250px;
+    width: 100%; /* Make it responsive */
+    width: 600px; /* Limit maximum width */
+    max-width: 600px;
+    height: 400px; /* Increased height */
     padding: 15px;
     font-size: 16px;
     border: 1px solid #ddd;
@@ -83,35 +75,34 @@ textarea:focus::placeholder {
     font-weight: bold;
     color: #FFFFFF; /* White text */
     border: 1px solid white;
-    cursor: pointer;
+    cursor: pointer; /* Default cursor when enabled */
     margin-top: 40px;
-    margin-left: 40%;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
     height: 40px;
     width: 90px;
     border-radius: 12px;
+    background-color: #1A1A2E; /* Consistent background color */
 }
 
 .submit-button:hover {
-    background-color: whitesmoke;
+    /* Optional hover effect */
+    background-color: rgba(0, 123, 255, 0.2); /* Lighten on hover */
 }
 
 .submit-button:active {
-    transform: translateY(2px);
+    background-color: #1A1A2E; /* Keep the background same on active */
 }
 
 .submit-button:disabled {
-    background-color:#1A1A2E;;
-    cursor: not-allowed;
+    background-color: #1A1A2E; /* Keep the background same when disabled */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
 }
-
-/* Responsive Design */
-
 
 /* Navigation Bar Styles */
 nav {
     width: 100%;
     background-color: #1A1A2E;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); */
     position: fixed;
     top: 0;
     z-index: 10;
@@ -147,4 +138,40 @@ nav ul li a {
     text-transform: uppercase;
     border-radius: 5px;
     transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .target1, .target2 {
+        font-size: large; /* Adjust font size for smaller screens */
+    }
+    .container {
+        padding: 10px; /* Reduce padding */
+    }
+    textarea {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+    .submit-button {
+        width: 80%; /* Make button width responsive */
+        height: 35px; /* Adjust height for smaller screens */
+    }
+    nav {
+        flex-direction: column; /* Stack items vertically */
+    }
+    nav ul {
+        flex-direction: column; /* Stack nav items */
+    }
+    nav ul li {
+        margin: 5px 0; /* Reduce margin between nav items */
+    }
+}
+
+@media (max-width: 480px) {
+    .submit-button {
+        width: 90%; /* Make button width almost full */
+        height: 30px; /* Further adjust height */
+    }
+    nav ul li a {
+        font-size: 16px; /* Reduce font size for smaller screens */
+    }
 }
