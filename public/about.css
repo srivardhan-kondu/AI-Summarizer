@@ -4,101 +4,98 @@ body {
     background-color: #1A1A2E; /* Dark background */
     color: #E0E0E0; /* Light gray text */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 0;
-    }
-    
-    /* Navigation Styling */
-    nav {
-    background-color: #2C2C54;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: #1A1A2E;
     width: 100%;
     padding: 15px 0;
     position: fixed;
     top: 0;
-    }
-    
-    .nav-container {
+}
+
+.nav-container {
     display: flex;
     justify-content: center;
-    }
-    
-    nav ul {
+}
+
+nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    }
-    
-    nav ul li {
+}
+
+nav ul li {
     margin: 0 15px;
-    }
-    
-    nav ul li a {
+}
+
+nav ul li a {
     color: #FFFFFF;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
-    }
-    
-    nav ul li a:hover {
+}
+
+nav ul li a:hover {
     color: #00BFFF;
-    }
-    
-    /* Container for content */
-    .container {
+}
+
+/* Container for content */
+.container {
     max-width: 800px;
-    padding: 20px;
-    background-color: #2C2C54; /* Slightly lighter dark background */
+    background-color: #1A1A2E; /* Slightly lighter dark background */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
     margin-top: 100px; /* Ensure content is not hidden behind nav */
-    }
-    
-    /* Heading Styles */
-    h1, h2 {
+    /* padding: 20px; Add padding inside the container */
+}
+
+/* Heading Styles */
+h1, h2 {
     color: #FFFFFF; /* Extra white text */
     text-align: center;
     margin-bottom: 20px;
-    }
-    
-    h1 {
+}
+
+h1 {
     font-size: 36px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for title */
-    }
-    
-    h2 {
+}
+
+h2 {
     font-size: 28px;
-    }
-    
-    /* Paragraph Styles */
-    .description {
+}
+
+/* Paragraph Styles */
+.description {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 30px;
     text-align: justify; /* Makes it more readable */
-    color: #E0E0E0;
-    }
-    
-    /* List Styling */
-    .details-list {
+}
+
+/* List Styling */
+.details-list {
     list-style: none;
     padding: 0;
     margin: 0;
     font-size: 18px;
-    }
-    
-    .details-list li {
+}
+
+.details-list li {
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
     margin-bottom: 10px;
     border-radius: 5px;
     color: #FFFFFF; /* White text */
-    }
-    
-    .details-list li strong {
+}
+
+.details-list li strong {
     color: #00BFFF; /* Highlight important fields in blue */
-    }
-   
+}
